@@ -5,7 +5,9 @@ class Rain {
   float powerGood;
   PVector powerLoc;
   boolean power;
-float possibleD;
+  float possibleD;
+  float oldnum;
+  float numchange;
   Rain() {
     possibleD=25;
     power=false;
@@ -17,7 +19,9 @@ float possibleD;
     xspeed=random(1);
   }
   void display() {
+   fill(20,107,252);
     ellipse(loc.x, loc.y, 10, 10);
+ fill(255);
   }  
   //move operation allows for raindrops to fall
   void move() {
@@ -32,20 +36,20 @@ float possibleD;
     if (dist(mouseX, c.recloc.y, loc.x, loc.y)<=possibleD) {
       loc.y=0;
       loc.x=random(500);
-     
-     //used for scoreing
+
+      //used for scoreing
       num+=1;
-     
+
       //every time it is caught a new number apears
       //this number effects that chance of a powerup spawning
-      powerGood= random(2);
+      powerGood= random(1);
     }
   }
   //this will be used to determine when the game is over
   //which will be after five drops are lost
   void die() {
     text(deathCount, 400, 50);
-    if (loc.y>495 && loc.y<498) {
+    if (loc.y>495 && loc.y<500) {
       deathCount=deathCount+1;
     }
     if (deathCount>=5) {
@@ -63,13 +67,24 @@ float possibleD;
       power=true;
     }
     if (power==true) {
+     fill(random(255),random(255),0);
       ellipse(powerLoc.x, powerLoc.y, 20, 20);
       powerLoc.y= powerLoc.y+1;
-    }
+ fill(255);  
+  }
     if (dist(mouseX, c.recloc.y, powerLoc.x, powerLoc.y)<=possibleD) {
       c.rectd=100;
       powerLoc.x=1000;
       possibleD=50;
+oldnum= num;
+  }
+  //after ten catches then the powerup switches on again
+  //also you lose your old power
+  numchange=num-oldnum;
+    if (numchange>9) {
+  c.rectd=50;
+  possibleD=25;
+  power=true;
     }
   }
 }
