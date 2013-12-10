@@ -42,7 +42,7 @@ class Rain {
 
       //every time it is caught a new number apears
       //this number effects that chance of a powerup spawning
-      powerGood= random(1);
+      powerGood= random(15);
     }
   }
   //this will be used to determine when the game is over
@@ -52,11 +52,14 @@ class Rain {
     if (loc.y>495 && loc.y<500) {
       deathCount=deathCount+1;
     }
-    if (deathCount>=5) {
+ 
+   text("deaths",405,25);
+   if (deathCount>=5) {
       background(255, 0, 0);
       textAlign(CENTER);
       textSize(80);
       fill(0);
+    
       text("GAME OVER", width/2, 250);
     }
   }
