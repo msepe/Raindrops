@@ -19,5 +19,6 @@ My good rain drops do not take in account for a timer but the raindrop just runs
 In order to account for a timer I added a new raindrop which does run on a timer.
 The bad rain drops run on the timmer.
 
-The only glitch that I noticed in my code was an error that sometimes occurs when you catch a powerup for the seccond time.
+The only glitch that I noticed in my code was an error that sometimes occurs when you catch a powerup for the seccond time
 Sometimes the power up grows then imediely shrinks right after caught, giving you no powerup.
+(also it for some reason didnt commit on the 17th even though it should have).
