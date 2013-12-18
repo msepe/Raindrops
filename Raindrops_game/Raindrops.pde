@@ -46,7 +46,7 @@ class Rain {
 
       //every time it is caught a new number apears
       //this number effects that chance of a powerup spawning
-      powerGood= random(2);
+      powerGood= random(20);
     }
   }
   //this will be used to determine when the game is over

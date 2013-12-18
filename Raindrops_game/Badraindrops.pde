@@ -23,18 +23,16 @@ class Badrain {
   //move operation allows for raindrops to fall
   void move2() {
     loc.y+= yspeed;
-//useing the speeder comand 
-//everytime the red his he ball of goes off scean
-//it will apear faster next time
-//also the speed will increase
-  // I made it so it ges fast very easily
-  if (loc.y>500) {
-      loc.y=0;
-      loc.x=random(500);
- oldTime=currentTime  ;
- speeder=50;
- yspeed=yspeed+1;
-  }
+    //useing the speeder comand 
+    //everytime the red his he ball of goes off scean
+    //it will apear faster next time
+    //also the speed will increase
+    // I made it so it ges fast very easily
+    if (loc.y>500) {
+    //  loc.y=0;
+     // loc.x=random(500);
+      
+    }
   }  
   // this determines what will happen once the raindrop and catcher meet
 
@@ -44,11 +42,10 @@ class Badrain {
       loc.x=random(500);
       //if you catch a bad raindrop then your death goes up
       deathCount=deathCount+1;
- oldTime=currentTime  ;
-  }
+      oldTime=currentTime  ;
+    }
   }
 }
 //this will be used to determine when the game is over
 //which will be after five drops are lost
-
 
