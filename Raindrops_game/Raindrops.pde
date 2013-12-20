@@ -1,10 +1,10 @@
 class Rain {
   float xspeed, yspeed;
   PVector loc;
-//  float deathCount;
+  //  float deathCount;
   float powerGood;
   PVector powerLoc;
-//  boolean power;
+  //  boolean power;
   float possibleD;
   float oldnum;
   float numchange;
@@ -14,7 +14,7 @@ class Rain {
     power=false;
     powerGood=30;
     powerLoc= new PVector(random(500), 0); 
-   // deathCount=0;
+    // deathCount=0;
     loc= new PVector(random(500), 0);
     yspeed=random(3, 5);
     xspeed=random(1);
@@ -51,7 +51,7 @@ class Rain {
   }
   //this will be used to determine when the game is over
   //which will be after five drops are lost
- 
+
   void die() {
     text(deathCount, 400, 50);
     if (loc.y>495 && loc.y<500) {
@@ -84,6 +84,7 @@ class Rain {
       c.rectd=100;
       powerLoc.x=1000;
       possibleD=50;
+      possibleD2=75;
       oldnum= num;
     }
     //after ten catches then the powerup switches on again
@@ -92,6 +93,7 @@ class Rain {
     if (numchange>9) {
       c.rectd=50;
       possibleD=25;
+      possibleD2=50;
     }
   }
 }

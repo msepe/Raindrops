@@ -6,6 +6,8 @@ int dropsNum;
 int dropsNumBad;
 boolean start;
 int increase;
+int possibleD;
+int possibleD2;
 //the declaring od the catcher and the raindrops
 Catcher c1;
 Rain[] drops= new Rain[1000];
@@ -22,9 +24,10 @@ void setup() {
   start=true;
   dropsNum=1;
   dropsNumBad=1;
- increase=1;
+  increase=1;
   oldTime=0;
   speeder=0;
+  possibleD2=50;
   size(500, 500);
   num=0;
   //catcher declaring continued
@@ -69,30 +72,30 @@ void draw() {
       badDrops[i].move2();
       badDrops[i].caught2(c1);
     }
-//time variable means after a certain number of time 
-//a new badrain will appear at a faster pace
+    //time variable means after a certain number of time 
+    //a new badrain will appear at a faster pace
     currentTime=millis();
     timeChange= currentTime-oldTime;
-       if (timeChange>2000-speeder) {
+    if (timeChange>2000-speeder) {
       oldTime=currentTime  ;
-     dropsNumBad=dropsNumBad+increase;
-           speeder=50;
+      dropsNumBad=dropsNumBad+increase;
+      speeder=50;
     }
-   //more badrain will apear after a certain score
-   if(num>10){
-    increase=2; 
-   }
-   if(num>25){
-    increase=3; 
-   }
-   if(num>50){
-    increase=5; 
-   }
+    //more badrain will apear after a certain score
+    if (num>10) {
+      increase=2;
+    }
+    if (num>25) {
+      increase=3;
+    }
+    if (num>50) {
+      increase=5;
+    }
     //attempts at trying to make the raindrops increase in number
     //after a certain number of drops fall
     //instead of increase in raindops, after a certain score is reaced
     //evil raindops apear
- 
+
     //all drops variables being stated, makeing the rain drop
     for (int i=0; i<dropsNum;i++) {
       drops[i].display();
