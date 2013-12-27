@@ -24,3 +24,4 @@ Sometimes the power up grows then imediely shrinks right after caught, giving yo
 (also it for some reason didnt commit on the 17th even though it should have).
 
 Also for the flow chart disregard whenever it says red rain drop. Red rain drops should be regarded as the drops that look like a head.
+(I also accidently spelled program wrong in the start, please disregard that).
